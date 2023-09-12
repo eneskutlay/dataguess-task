@@ -1,0 +1,34 @@
+.countryCard {
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.countryHeader {
+  padding: 10px;
+  background-color: #cecdcd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countryHeader h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.countryDetails {
+  padding: 10px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.countryDetails p {
+  margin: 5px 0;
+}
+
+.countryDetails strong {
+  font-weight: bold;
+}
