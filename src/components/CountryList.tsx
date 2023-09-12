@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
+// { GroupField }
 import React from "react";
-import useCustomData, { GroupField } from "../lib/useCustomData";
+import useCustomData from "../lib/useCustomData";
 import CountryCard from "./CountryCard";
 import "./styles/CountryList.css";
 
