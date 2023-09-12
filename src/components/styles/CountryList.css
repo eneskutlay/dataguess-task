@@ -1,0 +1,42 @@
+.countryList {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.countryList h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.countrySearch {
+  background-color: #cecdcd;
+  color: #fff;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.7rem 0.1rem;
+  border: 1px solid transparent;
+  background-color: #cecdcd;
+  color: #fff;
+}
+
+.countryListModal {
+  background-color: transparent;
+}
+
+.countryResults {
+  list-style-type: none;
+  padding: 0;
+}
+
+.countryResult {
+  padding: 10px;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  background-color: #cecdcd;
+  color: #333;
+}
