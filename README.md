@@ -1,27 +1,30 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Country List App
 
-Currently, two official plugins are available:
+Bu proje, React ve TypeScript kullanılarak geliştirilmiş bir ülke listesi uygulamasını içerir. Bu uygulama, aşağıdaki işlevselliğe sahiptir:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Bir halka açık GraphQL API'ndan ülke verilerini sorgulama ve sonuçları bir liste olarak görüntüleme
+- Sonuçları metin filtresi ile filtreleme ve gruplama
+- Liste öğelerini tıklanabilir hale getirme ve yalnızca bir öğeyi seçilebilir hale getirme
+- Sonuçlar yüklendikten ve filtreleme yapıldıktan sonra otomatik olarak 1. öğeyi seçme.
+- En iyi performans sonuçları için ilk 10 öğeyi listeleme, geri kalan öğeleri metin filtresi ile çağırabilme
 
-## Expanding the ESLint configuration
+## Nasıl Çalıştırılır
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Proje çalıştırılmadan önce, önce aşağıdaki adımları izleyin:
 
-- Configure the top-level `parserOptions` property like this:
+1. Projeyi bilgisayarınıza klonlayın veya indirin.
+2. Proje dizininde aşağıdaki komutu çalıştırarak bağımlılıkları yükleyin:
+<br/>
+   ```bash
+   git clone https://github.com/eneskutlay/dataguess-task.git
+   cd dataguess-task
+   npm install
+   npm run dev
+   ```
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Projeyi Canlı Olarak Görüntüleme
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Proje canlı olarak görüntülemek için [bu bağlantıyı](https://dataguess-task.vercel.app) kullanabilirsiniz.
+Vercel üzerinde yayınlanmıştır.
