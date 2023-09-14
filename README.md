@@ -17,6 +17,7 @@ Proje çalıştırılmadan önce, önce aşağıdaki adımları izleyin:
 1. Projeyi bilgisayarınıza klonlayın veya indirin.
 2. Proje dizininde aşağıdaki komutu çalıştırarak bağımlılıkları yükleyin:
 <br/>
+
    ```bash
    git clone https://github.com/eneskutlay/dataguess-task.git
    cd dataguess-task
