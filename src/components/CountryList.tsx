@@ -1,19 +1,11 @@
-// { GroupField }
-import React from "react";
+import React, { useState } from "react";
 import useCustomData from "../lib/useCustomData";
 import CountryCard from "./CountryCard";
 import "./styles/CountryList.css";
 
 const CountryList: React.FC = () => {
-  const {
-    query,
-    setQuery,
-    //groupField,
-    //setGroupField,
-    filteredData,
-    loading,
-    error,
-  } = useCustomData();
+  const { query, setQuery, filteredData, loading, error } = useCustomData();
+  const [openCardIndex, setOpenCardIndex] = useState(0);
 
   const filteredResults = query
     ? filteredData.filter((country) =>
@@ -24,27 +16,36 @@ const CountryList: React.FC = () => {
   const first10Results = filteredResults.slice(0, 10);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="loadingString">Loading...</p>;
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p className="errorString">Error: {error.message}</p>;
   }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    if (inputValue && openCardIndex !== -1) {
+      setOpenCardIndex(-1); // Tüm kartları kapat
+    }
+    setQuery(inputValue);
+  };
 
   return (
     <div className="countryList">
-      <h1>Country List</h1>
+      <h2>Country List</h2>
       <div className="countrySearch">
         <input
           type="text"
           placeholder="Search by name"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          //onChange={(e) => setQuery(e.target.value)}
+          onChange={handleInputChange}
         />
       </div>
       <div className="countryListModal">
         <ul className="countryResults">
-          {first10Results.map((country) => (
+          {first10Results.map((country, index) => (
             <li key={country.code} className="countryResult">
               <CountryCard
                 name={country.name}
@@ -52,6 +53,8 @@ const CountryList: React.FC = () => {
                 emoji={country.emoji}
                 currency={country.currency}
                 languages={country.languages}
+                isOpen={index === openCardIndex}
+                toggleCard={() => setOpenCardIndex(index)}
               />
             </li>
           ))}

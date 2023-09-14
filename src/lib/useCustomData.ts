@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_COUNTRIES } from "./queries/GET_COUNTRIES";
 
-export type GroupField = "name" | "capital"; // Kullanılabilir alanları burada belirtin
+export type GroupField = "name" | "capital";
 
 interface Language {
   code: string;
@@ -32,12 +32,12 @@ const useCustomData = () => {
 
   useEffect(() => {
     if (!loading && !error && data) {
-      // İlk adım olarak veriyi filtreleyin
+      // veri filtreleme
       const filteredData = data.countries.filter((item) =>
         item.name.includes(query)
       );
 
-      // Ardından veriyi gruplayın
+      // veri gruplama
       const groupedData: Record<string, CountryData[]> = {};
       filteredData.forEach((item) => {
         const groupValue = item[groupField];
@@ -47,7 +47,7 @@ const useCustomData = () => {
         groupedData[groupValue].push(item);
       });
 
-      // Dizilere dönüştürme işlemi
+      // veriyi array'e çevirme
       const groupedDataArray: CountryData[] = [];
       for (const key in groupedData) {
         if (Object.hasOwnProperty.call(groupedData, key)) {
@@ -71,4 +71,3 @@ const useCustomData = () => {
 };
 
 export default useCustomData;
-
