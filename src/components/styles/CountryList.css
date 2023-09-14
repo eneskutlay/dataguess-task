@@ -5,14 +5,15 @@
   padding: 20px;
 }
 
-.countryList h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.countryList h2 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  color: #c3c2c2;
 }
 
 .countrySearch {
   background-color: #cecdcd;
-  color: #fff;
+  color: #333333;
 }
 
 input[type="text"],
@@ -21,7 +22,7 @@ select {
   padding: 0.7rem 0.1rem;
   border: 1px solid transparent;
   background-color: #cecdcd;
-  color: #fff;
+  color: #6e6d6d;
 }
 
 .countryListModal {
@@ -39,4 +40,22 @@ select {
   margin-bottom: 10px;
   background-color: #cecdcd;
   color: #333;
+}
+
+.loadingString {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.errorString {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
 }
